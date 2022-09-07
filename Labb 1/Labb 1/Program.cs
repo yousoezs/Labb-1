@@ -20,16 +20,16 @@ namespace Labb_1
             var temp = 0;
             for (int i = 0; i < input.Length; i++)
             {
-                Write(input[i]);
+                //Write(input[i]);
                 for (int j = 0; j < input.Length; j++)
                 {
-                    if (input[i] != input[j])
+                    if (char.IsDigit(input[j]))
                     {
                         temp = input[j];
                     }
                     else if (input[i] == input[j])
                     {
-                        Write($"{input[i]} {temp}");
+                        
                     }
                 }
             }
