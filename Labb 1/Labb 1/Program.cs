@@ -23,9 +23,13 @@ namespace Labb_1
                 Write(input[i]);
                 for (int j = 0; j < input.Length; j++)
                 {
-                    if (int.TryParse(input, out int input1))
+                    if (input[i] != input[j])
                     {
-                        WriteLine(input1);
+                        temp = input[j];
+                    }
+                    else if (input[i] == input[j])
+                    {
+                        Write($"{input[i]} {temp}");
                     }
                 }
             }
