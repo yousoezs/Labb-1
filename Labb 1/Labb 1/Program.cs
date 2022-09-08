@@ -16,8 +16,8 @@ namespace Labb_1
     {
         static void Main(string[] args)
         {
-            string input = "29535123p48723487597645723645";
-
+            string input = ReadLine();
+       
             long result = 0;
 
             for (int i = 0; i < input.Length; i++)
