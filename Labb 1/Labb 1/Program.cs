@@ -17,20 +17,24 @@ namespace Labb_1
         static void Main(string[] args)
         {
             string input = "29535123p48723487597645723645";
-            var temp = 0;
+            int firstIndex = input.IndexOf(input);
+            WriteLine($"Första Index: {firstIndex}. Värdet av {input[firstIndex]}");
+            var count = input.Length;
+
             for (int i = 0; i < input.Length; i++)
             {
-                //Write(input[i]);
-                for (int j = 0; j < input.Length; j++)
+                for(int j = i + 1; j < input.Length - i; j++)
                 {
-                    if (char.IsDigit(input[j]))
+                    if (input[i] == input[j])
                     {
-                        temp = input[j];
+                        string output = input.Substring(i, j + 1);
+                        WriteLine($"Index inuti \"i\": {input[i]}");
+                        WriteLine($"Index inuti \"j\": {input[j]}");
+                        WriteLine(output);
+                        break;
                     }
-                    else if (input[i] == input[j])
-                    {
-                        
-                    }
+                    else
+                        WriteLine("Tecken kom ivägen!");
                 }
             }
         }
