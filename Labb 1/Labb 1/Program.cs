@@ -17,9 +17,8 @@ namespace Labb_1
         static void Main(string[] args)
         {
             string input = "29535123p48723487597645723645";
-            int firstIndex = input.IndexOf(input);
-            WriteLine($"Första Index: {firstIndex}. Värdet av {input[firstIndex]}");
-            var count = input.Length;
+
+            long result = 0;
 
             for (int i = 0; i < input.Length; i++)
             {
@@ -31,11 +30,18 @@ namespace Labb_1
                     {
                         int length = j - i;
                         string output = input.Substring(i, length + 1);
+                        Write(input);
+                        SetCursorPosition(i, CursorTop);
+                        ForegroundColor = ConsoleColor.Green;
                         WriteLine(output);
+                        ForegroundColor = ConsoleColor.White;
+
+                        result += ToInt64(output);
                         break;
                     }
                 }
             }
+            WriteLine($"Färg markerade tal adderade ihop blir: {result}");
         }
     }
 }
