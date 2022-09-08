@@ -23,18 +23,19 @@ namespace Labb_1
 
             for (int i = 0; i < input.Length; i++)
             {
-                for(int j = i + 1; j < input.Length - i; j++)
+                for (int j = i + 1; j < input.Length - 1; j++)
                 {
+                    if (!char.IsDigit(input[j]))
+                        break;
                     if (input[i] == input[j])
                     {
-                        string output = input.Substring(i, j + 1);
-                        WriteLine($"Index inuti \"i\": {input[i]}");
-                        WriteLine($"Index inuti \"j\": {input[j]}");
-                        WriteLine(output);
+                        ForegroundColor = ConsoleColor.Green;
+                        int length = j - i;
+                        string output = input.Substring(i, length + 1);
+                        Write();
+                        ForegroundColor = ConsoleColor.White;
                         break;
                     }
-                    else
-                        WriteLine("Tecken kom ivägen!");
                 }
             }
         }
