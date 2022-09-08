@@ -29,11 +29,9 @@ namespace Labb_1
                         break;
                     if (input[i] == input[j])
                     {
-                        ForegroundColor = ConsoleColor.Green;
                         int length = j - i;
                         string output = input.Substring(i, length + 1);
-                        Write();
-                        ForegroundColor = ConsoleColor.White;
+                        WriteLine(output);
                         break;
                     }
                 }
