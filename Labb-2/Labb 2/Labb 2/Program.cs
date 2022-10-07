@@ -38,6 +38,8 @@ Exempel:
     {
         static void Main(string[] args)
         {
+            bool isLoggedIn = false;
+
             List<Customer> customers = new List<Customer>();
             string name = string.Empty, password = string.Empty;
             Customer newCustomer = new Customer(name, password);
@@ -49,7 +51,7 @@ Exempel:
             customers.Add(customer3);
 
 
-            while (true)
+            while (!isLoggedIn)
             {
                 WriteLine("Welcome!\n1.Login ---\n2.Register User ---");
 
@@ -69,8 +71,9 @@ Exempel:
                             else
                             {
                                 WriteLine("User does not exist, do you wish to register a user or try again?\n Press space to go back once and choose!");
-                                
+
                                 ReadKey();
+                                sr.Close();
                                 Clear();
                                 continue;
                             }
@@ -79,8 +82,8 @@ Exempel:
                             if (passW.Equals(sr.ReadLine()))
                             {
                                 Clear();
-                                Write("Nu funkar det!");
-                                ReadKey();
+                                Write($"Welcome {userN}. Directing to Menu...");
+                                isLoggedIn = true;
                             }
                             else
                             {
@@ -123,6 +126,10 @@ Exempel:
                         break;
                 }
                 Clear();
+            }
+            while (isLoggedIn)
+            {
+
             }
         }
 
